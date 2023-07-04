@@ -51,7 +51,7 @@ io.on('connection',(socket)=>{
    io.to(messageInfo["roomid"]).emit('receiveMessage',messageInfo["messageInfo"])
   })
   socket.on('disconnect',()=>{
-    console.log('A user is disconnected')
+    // console.log('A user is disconnected')
   })
 
 })
