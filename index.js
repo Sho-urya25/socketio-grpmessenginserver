@@ -42,6 +42,10 @@ io.on('connection',(socket)=>{
     // console.log('user joined room',roomId)
     socket.join(roomId);
   })
+  socket.on('leaveRoom', (room) => {
+    socket.leave(room);
+    // console.log(`User left room: ${room}`);
+  });
   socket.on('sendMessage',(messageInfo)=>{
     // console.log("message is sent to room   ",messageInfo["roomid"],"  message is ",messageInfo["message"])
    io.to(messageInfo["roomid"]).emit('receiveMessage',messageInfo["messageInfo"])
